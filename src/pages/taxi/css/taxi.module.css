@@ -1,0 +1,11 @@
+.taxi {
+  text-align: center;
+}
+
+.taxiImg {
+  min-height: 350px;
+  max-height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}/*# sourceMappingURL=taxi.module.css.map */

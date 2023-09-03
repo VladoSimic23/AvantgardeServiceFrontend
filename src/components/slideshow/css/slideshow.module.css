@@ -1,0 +1,46 @@
+.imageSlideshow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.imageSlideshow .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: #fff;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.imageSlideshow .arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.imageSlideshow .arrow.leftArrow {
+  left: 0px;
+}
+.imageSlideshow .arrow.rightArrow {
+  right: 0px;
+}
+.imageSlideshow img {
+  max-width: 90%;
+  height: auto;
+  max-height: 500px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=slideshow.module.css.map */
