@@ -7,6 +7,7 @@ const testi = `*[_type == "footer"]`;
 
 const Footer = () => {
     const [footerData,setFooterData] = useState<any[] | []>([]);
+
     
     useEffect(() => {
         const fetchData = async () => {
@@ -15,6 +16,11 @@ const Footer = () => {
         }
         fetchData()
       },[])
+
+  if(footerData.length < 1) {
+      return;
+  }
+
   return (
     <div className={style.footer} style={{backgroundImage: `url(${footerData[0]?.BackgroundImage.asset._ref && urlFor(footerData[0]?.BackgroundImage.asset._ref).url()})`}}>
       <div className={style.footerOverlay}></div>

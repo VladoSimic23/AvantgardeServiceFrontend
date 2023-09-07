@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import client from "../../sanity"
 import ImageSlideshow from "../../components/slideshow/ImageSlideshow";
+import Videos from "../../components/videos/Videos";
 
 const hero = `*[_type == "accommodation"]`;
 
 const AccHousesSection = () => {
-    const [houseData,setHouseData] = useState<any[] | []>([]);
-    
+    const [houseData,setHouseData] = useState<any[] | []>([]);        
     
     useEffect(() => {
         const fetchData = async () => {
@@ -32,12 +32,15 @@ const AccHousesSection = () => {
             </div>
             <div className={globalStyles.textCenter}>
                 {addHouse && addHouse.map((item:any,index:number) => {
-                    const {headingWithHouseLink: {heading,houseUrl},images, text} = item;
+                    const {headingWithHouseLink: {heading,houseUrl},images, text,videos} = item;
                     return <div key={index}>
                         {heading && <a href={houseUrl || "#"} target="_blank" className={globalStyles.linkBlue}>{heading}</a>}
                         {text && <p className={globalStyles.container800}>{text}</p>}
                         <div>                            
                             <ImageSlideshow images={images}/>
+                        </div>
+                        <div>
+                            <Videos videos={videos}/>
                         </div>
                     </div>
                 })}
@@ -48,3 +51,4 @@ const AccHousesSection = () => {
 }
 
 export default AccHousesSection
+

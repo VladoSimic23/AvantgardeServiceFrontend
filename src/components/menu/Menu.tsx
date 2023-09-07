@@ -17,7 +17,7 @@ interface MenuI {
 
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState<number | null>(0);
+    const [activeItem, setActiveItem] = useState<number | null>(null);
     const [menuData,setMenuData] = useState<MenuI[] | []>([]);
       
     useEffect(() => {
@@ -38,9 +38,10 @@ const Menu = () => {
         top: 0,
         behavior: 'smooth'
       });
+      setIsMenuOpen(false);
     };
 
-    if(!menuData) {
+    if(menuData.length < 1) {
         return;
     }
 
