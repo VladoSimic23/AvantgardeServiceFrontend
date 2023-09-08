@@ -54,4 +54,17 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .heroText h1 {
+    font-size: 26px !important;
+  }
+  .heroText h3 {
+    font-size: 15px !important;
+  }
+  .heroText a {
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+  }
 }/*# sourceMappingURL=home.module.css.map */

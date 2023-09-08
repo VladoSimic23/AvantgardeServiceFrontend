@@ -70,15 +70,18 @@
 //     }
 // }
 
-// @media only screen and (max-width: 600px) {
-//     h1 {
-//         font-size: 30px !important;
-//     }
-//     h3 {
-//         font-size: 18px !important;
-//     }
-//     a {
-//         font-size: 16px !important;
-//         padding: 6px 12px !important;
-//     }
-// }
+@media only screen and (max-width: 600px) {
+    .heroText {
+        h1 {
+            font-size: 26px !important;
+        }
+        h3 {
+            font-size: 15px !important;
+        }
+        a {
+            font-size: 14px !important;
+            padding: 6px 12px !important;
+        }
+    }
+    
+}

@@ -112,6 +112,7 @@
         text-align: center;
           li {
             padding: 10px 0;
+            font-size: 16px !important;
           }
       }
       .menuItems.open {
@@ -149,6 +150,9 @@
         li {
           a {
             font-size: 16px;
+            span {
+              font-size: 14px !important;
+            }
           }
         }
       }

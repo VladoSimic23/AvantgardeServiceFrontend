@@ -113,6 +113,7 @@
   }
   .menuItems li {
     padding: 10px 0;
+    font-size: 16px !important;
   }
   .menuItems.open {
     display: flex;
@@ -146,6 +147,9 @@
   }
   .menuItems li a {
     font-size: 16px;
+  }
+  .menuItems li a span {
+    font-size: 14px !important;
   }
 }
 @media (max-width: 1200px) {
