@@ -37,6 +37,10 @@ span {
   border-radius: 5px;
 }
 
+img {
+  box-shadow: 2px 2px 15px 5px rgba(19, 20, 20, 0.3803921569);
+}
+
 .container {
   max-width: 1400px;
   padding: 0 30px;
