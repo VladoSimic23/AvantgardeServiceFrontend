@@ -80,6 +80,7 @@
 @media (max-width: 768px) {
   .logo img {
     width: 80px;
+    height: 80px;
   }
   .logo h3 {
     display: none;

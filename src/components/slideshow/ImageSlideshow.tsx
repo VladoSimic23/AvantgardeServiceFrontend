@@ -23,7 +23,7 @@ const ImageSlideshow = ({ images }: {images: any[] | undefined}) => {
       <div className={`${styles.arrow} ${styles.leftArrow}`} onClick={prevSlide}>
         &lt;
       </div>
-       {images[currentIndex].asset._ref && <img src={images[currentIndex].asset._ref && urlFor(images[currentIndex].asset._ref).url()} alt={`Slide ${currentIndex + 1}`} />} 
+       {images[currentIndex].asset._ref && <img src={images[currentIndex].asset._ref && urlFor(images[currentIndex].asset._ref).url()} width="auto" height="auto" alt={`Slide ${currentIndex + 1}`} />} 
       <div className={`${styles.arrow} ${styles.rightArrow}`} onClick={nextSlide}>
         &gt;
       </div>

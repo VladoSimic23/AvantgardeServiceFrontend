@@ -30,7 +30,7 @@ const GetToKnowUsSection = () => {
             {getToData[0]?.getToKnowUs.offers && getToData[0]?.getToKnowUs.offers.map((item: any,index: number) => {
                 const {Image: {asset: {_ref}},Button_Link: {ButtonLink,ButtonText},Heading,Text} = item;
                 return <div key={index}>
-                    {_ref && <img className={taxiStyles.taxiImg} src={_ref && urlFor(_ref).url()} alt={String(index)} />}
+                    {_ref && <img className={taxiStyles.taxiImg} src={_ref && urlFor(_ref).url()} width="auto" height="auto" alt={String(index)} />}
                     {Heading && <h2>{Heading}</h2>}
                     {Text && <p>{Text}</p>}
                     {ButtonText && <a href={ButtonLink}>{ButtonText}</a>}

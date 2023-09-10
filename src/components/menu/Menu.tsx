@@ -49,7 +49,7 @@ const Menu = () => {
       <div className={styles.containerMenu}>
       <div className={styles.menu}>
         <div className={styles.logo}>
-            <img src={ menuData[0]?.image.asset._ref && urlFor(menuData[0]?.image.asset._ref).width(150).url()} alt="logo" />
+            <img src={ menuData[0]?.image.asset._ref && urlFor(menuData[0]?.image.asset._ref).width(150).url()} width={90} height={90} alt="logo" />
             <h3>{menuData[0]?.name}</h3>
         </div>
         <div className={`${styles.hamburger} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
