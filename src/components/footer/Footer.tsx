@@ -32,7 +32,7 @@ const Footer = () => {
         <div>
           {footerData[0]?.media && footerData[0]?.media.map((item:any,index:number) => {
             return <div className={style.media} key={index}>
-              {item.mediaImage.asset._ref && <img src={urlFor(item.mediaImage.asset._ref).url()} width="auto" height="auto" alt={`media${item.media}`} />}
+              {item.mediaImage.asset._ref && <img src={urlFor(item.mediaImage.asset._ref).url()} width="auto" height="auto" alt={`media${index}`} />}
               <span>{item.mediaName}</span>
             </div>
           })}
