@@ -5,6 +5,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
 }
 
 .heroText {
@@ -46,6 +54,19 @@
     margin: 0 auto;
 }
 
+
+
+
+
+
+// @media only screen and (max-width: 992px) {
+//     h1 {
+//         font-size: 40px !important;
+//     }
+//     h3 {
+//         font-size: 20px !important;
+//     }
+// }
 
 @media only screen and (max-width: 600px) {
     .heroText {
