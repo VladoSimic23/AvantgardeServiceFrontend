@@ -18,7 +18,7 @@ const HeroSection = () => {
       },[])
   return (
     <div className={styles.hero} style={{backgroundImage: `url(${heroData[0]?.hero.HeroBgImage.asset._ref && urlFor(heroData[0]?.hero.HeroBgImage.asset._ref).url()})`}}>
-        {heroData[0].hero.HeroBgImage.asset && <div className={globalStyles.imageOverlay}></div>}
+        {heroData[0]?.hero.HeroBgImage.asset && <div className={globalStyles.imageOverlay}></div>}
         <div className={styles.heroText}>
         {heroData[0]?.hero.heroHeading && <h1 className={globalStyles.borderGreen}>{heroData[0]?.hero.heroHeading}</h1>}
         {heroData[0]?.hero.heroText && <h3>{heroData[0]?.hero.heroText}</h3>}
