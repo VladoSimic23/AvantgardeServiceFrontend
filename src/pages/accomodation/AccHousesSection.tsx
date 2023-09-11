@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import client from "../../sanity"
 import ImageSlideshow from "../../components/slideshow/ImageSlideshow";
-import Videos from "../../components/videos/Videos";
+import {lazy,Suspense} from "react"
 
 const hero = `*[_type == "accommodation"]`;
+
+const Videos = lazy(() => import("../../components/videos/Videos"));
 
 const AccHousesSection = () => {
     const [houseData,setHouseData] = useState<any[] | []>([]);        
@@ -40,7 +42,9 @@ const AccHousesSection = () => {
                             <ImageSlideshow images={images}/>
                         </div>
                         <div>
-                            <Videos videos={videos}/>
+                            <Suspense fallback={<div>Loading Video...</div>}>
+                                <Videos videos={videos}/>
+                            </Suspense>
                         </div>
                     </div>
                 })}
