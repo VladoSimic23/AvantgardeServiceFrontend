@@ -42,9 +42,9 @@ const AccHousesSection = () => {
                             <ImageSlideshow images={images}/>
                         </div>
                         <div>
-                            <Suspense fallback={<div>Loading Video...</div>}>
+                            {videos.length > 0 && <Suspense fallback={<div>Loading Video...</div>}>
                                 <Videos videos={videos}/>
-                            </Suspense>
+                            </Suspense>}
                         </div>
                     </div>
                 })}
