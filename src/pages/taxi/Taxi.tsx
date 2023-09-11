@@ -1,11 +1,17 @@
-import TaxiHeroSection from './TaxiHeroSection'
+// import TaxiHeroSection from './TaxiHeroSection'
 import TaxiServicesSection from './TaxiServicesSection'
+import {lazy,Suspense} from "react"
 
+const TaxiHeroSection = lazy(() => import("./TaxiHeroSection"));
 
 const Taxi = () => {
   return (
     <div>
-      <TaxiHeroSection/>
+       <Suspense fallback={<div>
+          <h1>Loading...</h1>
+        </div>}>
+          <TaxiHeroSection/>
+        </Suspense>
       <TaxiServicesSection/>
     </div>
   )
