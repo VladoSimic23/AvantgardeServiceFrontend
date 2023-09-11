@@ -1,17 +1,11 @@
 import ContactForm from "./ContactForm"
-// import ContactHeroSection from "./ContactHeroSection"
-import {lazy,Suspense} from "react"
+import ContactHeroSection from "./ContactHeroSection"
 
-const ContactHeroSection = lazy(() => import("./ContactHeroSection"));
 
 const ContactUs = () => {
   return (
     <div>
-      <Suspense fallback={<div>
-          <h1>Loading...</h1>
-        </div>}>
-          <ContactHeroSection/>
-        </Suspense>
+      <ContactHeroSection/>
       <ContactForm/>
     </div>
   )
