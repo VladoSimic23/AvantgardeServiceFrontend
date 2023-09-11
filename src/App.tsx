@@ -1,12 +1,14 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Menu from './components/menu/Menu';
 import Home from './pages/home/Home';
-import Footer from './components/footer/Footer';
 import Accommodation from './pages/accomodation/Accommodation';
 import Taxi from './pages/taxi/Taxi';
 import Excursions from './pages/excursions/Excursions';
 import ContactUs from './pages/contact/ContactUs';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
+import {lazy,Suspense} from "react"
+
+const Menu = lazy(() => import("./components/menu/Menu"));
+const Footer = lazy(() => import("./components/footer/Footer"));
 
 
 function App() {
@@ -14,7 +16,11 @@ function App() {
   return (
     <>
       <Router>
-      <Menu/>
+      <Suspense fallback={<div>
+          <h1>Loading...</h1>
+        </div>}>
+          <Menu/>
+        </Suspense>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/accommodation' element={<Accommodation/>} />
@@ -23,7 +29,11 @@ function App() {
           <Route path='/contact' element={<ContactUs/>} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
-        <Footer/>
+        <Suspense fallback={<div>
+          <h1>Loading...</h1>
+        </div>}>
+          <Footer/>
+        </Suspense>
       </Router>      
     </>
   )
