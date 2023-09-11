@@ -4,19 +4,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  animation: fadeIn 1s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    margin-left: -200px;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
-  }
-}
 .heroText {
   position: absolute;
   z-index: 100;
