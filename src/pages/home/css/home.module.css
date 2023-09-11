@@ -55,9 +55,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .hero {
-    min-height: 65vh !important;
-  }
   .heroText h1 {
     font-size: 26px !important;
   }
