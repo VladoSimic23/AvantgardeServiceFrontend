@@ -26,6 +26,9 @@
   padding: 10px;
   cursor: pointer;
 }
+.accordionHeader h2 {
+  font-size: 26px;
+}
 .accordionHeader span {
   color: green;
   font-size: 30px;

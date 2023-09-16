@@ -14,7 +14,7 @@ const Accordion = ({ ...item }: any) => {
     <div className={styles.accordion}>
       <div className={styles.accordionHeader} onClick={toggleAccordion}>
         <img src={urlFor(_ref).url()} width="auto" height="auto" alt={personName} />
-        <h3>{personName}</h3>
+        <h2>{personName}</h2>
         <p>{value} / 10</p>
         <span className={`icon ${isOpen ? styles.rotateDot : styles.rotateZero}`}>▼</span>
       </div>

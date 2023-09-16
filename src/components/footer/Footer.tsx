@@ -28,7 +28,7 @@ const Footer = () => {
       <div className={style.footerContent}>
         {footerData[0]?.heading && <h1>{footerData[0]?.heading}</h1>}
         {footerData[0]?.text && <p>{footerData[0]?.text}</p>}
-        {footerData[0]?.book && <h3>{footerData[0]?.book}</h3>}
+        {footerData[0]?.book && <h2>{footerData[0]?.book}</h2>}
         <div>
           {footerData[0]?.media && footerData[0]?.media.map((item:any,index:number) => {
             return <div className={style.media} key={index}>

@@ -29,7 +29,7 @@
   font-weight: 300;
   line-height: 1.3;
 }
-.heroText h3 {
+.heroText h2 {
   font-size: 25px;
   font-weight: 300;
 }
@@ -55,6 +55,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .hero {
+    min-height: 65vh !important;
+  }
   .heroText h1 {
     font-size: 26px !important;
   }

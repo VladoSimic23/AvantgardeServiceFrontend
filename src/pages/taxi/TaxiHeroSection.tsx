@@ -21,7 +21,7 @@ const TaxiHeroSection = () => {
     <div className={globalStyles.imageOverlay}></div>
     <div className={styles.heroText}>
     {heroData[0]?.hero.heroHeading && <h1 className={globalStyles.borderGreen}>{heroData[0]?.hero.heroHeading}</h1>}
-    {heroData[0]?.hero.heroText && <h3>{heroData[0]?.hero.heroText}</h3>}
+    {heroData[0]?.hero.heroText && <h2>{heroData[0]?.hero.heroText}</h2>}
     {heroData[0]?.hero.heroButton && <a href={heroData[0]?.hero.heroButton.url}>{heroData[0]?.hero.heroButton.label}</a>}
     </div>
 </div>

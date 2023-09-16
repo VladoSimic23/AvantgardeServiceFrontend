@@ -22,6 +22,9 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.footerContent h2 {
+  font-size: 26px;
+}
 
 .media {
   display: flex;
