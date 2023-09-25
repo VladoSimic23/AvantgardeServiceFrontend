@@ -61,7 +61,7 @@ const Menu = () => {
           {menuData[0]?.page_links?.map((item,index:number) => (            
              <li key={item._key}><NavLink to={item.Url} onClick={() => handleItemClick(index)}><span className={Number(index) === activeItem ? globalStyles.active : ''}>{item.Link_Name}</span></NavLink></li>
           ))}
-             {menuData[0]?.reservationBtn.buttonText && <li ><a href={menuData[0]?.reservationBtn.buttonUrl} target="_blank" className={styles.reservationBtn}>{menuData[0]?.reservationBtn.buttonText}</a></li>}
+             {/* {menuData[0]?.reservationBtn.buttonText && <li ><a href={menuData[0]?.reservationBtn.buttonUrl} target="_blank" className={styles.reservationBtn}>{menuData[0]?.reservationBtn.buttonText}</a></li>} */}
         </ul>
       </div>
       </div>
