@@ -17,8 +17,16 @@ interface MenuI {
 
 const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState<number | null>(null);
+    const [activeItem, setActiveItem] = useState<number | null>(0);
     const [menuData,setMenuData] = useState<MenuI[] | []>([]);
+
+     // Effect to load active item from localStorage on page load
+  useEffect(() => {
+    const storedActiveItem = localStorage.getItem('activeItem');
+    if (storedActiveItem) {
+      setActiveItem(Number(storedActiveItem));
+    }
+  }, []);
       
     useEffect(() => {
         const fetchData = async () => {
@@ -34,6 +42,7 @@ const Menu = () => {
   
     const handleItemClick = (id:number) => {
       setActiveItem(id);
+      localStorage.setItem('activeItem', String(id));
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
