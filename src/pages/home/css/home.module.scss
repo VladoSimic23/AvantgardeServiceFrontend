@@ -31,7 +31,7 @@
     }
     a {
         color: white;
-        background: green;
+        background: #11c976;
         padding: 10px 20px;
         text-decoration: none;
         border-radius: 6px;
@@ -55,6 +55,11 @@
     margin: 0 auto;
 }
 
+.getToFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 @media only screen and (max-width: 600px) {
     // .hero {
