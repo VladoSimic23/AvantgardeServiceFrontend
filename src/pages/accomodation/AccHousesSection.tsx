@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import client from "../../sanity"
 import ImageSlideshow from "../../components/slideshow/ImageSlideshow";
 import {lazy,Suspense} from "react"
+import { NavLink } from "react-router-dom";
+import { MyContext } from "../../ContextApi";
 
 const hero = `*[_type == "accommodation"]`;
 
 const Videos = lazy(() => import("../../components/videos/Videos"));
 
 const AccHousesSection = () => {
-    const [houseData,setHouseData] = useState<any[] | []>([]);        
+    const [houseData,setHouseData] = useState<any[] | []>([]);
+    const {handleItemClick} = useContext(MyContext)        
     
     useEffect(() => {
         const fetchData = async () => {
@@ -36,7 +39,7 @@ const AccHousesSection = () => {
                 {addHouse && addHouse.map((item:any,index:number) => {
                     const {headingWithHouseLink: {heading,houseUrl},images, text,videos} = item;
                     return <div key={index}>
-                        {heading && <a href={houseUrl || "#"} target="_blank" className={globalStyles.linkBlue}>{heading}</a>}
+                        {heading && <NavLink onClick={() => handleItemClick(4)} to={houseUrl} className={globalStyles.greenLink}>{heading}</NavLink>}
                         {text && <p className={globalStyles.container800}>{text}</p>}
                         <div>                            
                             <ImageSlideshow images={images}/>

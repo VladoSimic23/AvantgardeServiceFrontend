@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import client from "../../sanity"
 import { urlFor } from "../../components/imageBuilder/imageBuilder";
 import taxiStyles from "../taxi/css/taxi.module.css"
+import { NavLink } from "react-router-dom";
+import { MyContext } from "../../ContextApi";
 
 const hero = `*[_type == "excursions"]`;
 
 const ExcursionOffers = () => {
     const [excData,setExcData] = useState<any[] | []>([]);
+    const {handleItemClick} = useContext(MyContext)
     
   useEffect(() => {
       const fetchData = async () => {
@@ -38,7 +41,7 @@ const ExcursionOffers = () => {
               </div>
             })}
             </div>
-            {item.reservation.reservationText && <a className={globalStyles.btnGreen} href={item.reservation.reservationUrl} target="_blank">{item.reservation.reservationText}</a>}
+            {item.reservation.reservationText && <NavLink onClick={() => handleItemClick(4)} className={globalStyles.btnGreen} to={item.reservation.reservationUrl}>{item.reservation.reservationText}</NavLink>}
           </div>
         }) }
       </div>

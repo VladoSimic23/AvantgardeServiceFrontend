@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import styles from "./css/menu.module.css"
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import { NavLink } from "react-router-dom";
 import client from "../../sanity"
 import { urlFor } from "../imageBuilder/imageBuilder";
+import { MyContext } from "../../ContextApi";
 
 const menu = `*[_type == "menu"]`;
 
-interface MenuI {
+export interface MenuI {
   _id: string;
   name: string;
   image: {asset: {_ref: string}};
@@ -16,9 +17,7 @@ interface MenuI {
 }[]
 
 const Menu = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState<number | null>(0);
-    const [menuData,setMenuData] = useState<MenuI[] | []>([]);
+    const {isMenuOpen,setIsMenuOpen,activeItem,setActiveItem,menuData,setMenuData,handleItemClick} = useContext(MyContext)    
 
      // Effect to load active item from localStorage on page load
   useEffect(() => {
@@ -39,16 +38,6 @@ const Menu = () => {
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
-  
-    const handleItemClick = (id:number) => {
-      setActiveItem(id);
-      localStorage.setItem('activeItem', String(id));
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      setIsMenuOpen(false);
-    };
 
     if(menuData.length < 1) {
         return;
@@ -67,10 +56,9 @@ const Menu = () => {
           <div className={styles.bar}></div>
         </div>
         <ul className={`${styles.menuItems} ${isMenuOpen ? styles.open : ''}`}>
-          {menuData[0]?.page_links?.map((item,index:number) => (            
+          {menuData[0]?.page_links?.map((item: any,index:number) => (            
              <li key={item._key}><NavLink to={item.Url} onClick={() => handleItemClick(index)}><span className={Number(index) === activeItem ? globalStyles.active : ''}>{item.Link_Name}</span></NavLink></li>
-          ))}
-             {/* {menuData[0]?.reservationBtn.buttonText && <li ><a href={menuData[0]?.reservationBtn.buttonUrl} target="_blank" className={styles.reservationBtn}>{menuData[0]?.reservationBtn.buttonText}</a></li>} */}
+          ))}            
         </ul>
       </div>
       </div>
