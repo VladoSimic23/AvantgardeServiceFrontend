@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import styles from "./css/home.module.css"
 import client from "../../sanity"
 import { urlFor } from "../../components/imageBuilder/imageBuilder";
 import taxiStyles from "../taxi/css/taxi.module.css"
+import { NavLink } from "react-router-dom";
+import { MyContext } from "../../ContextApi";
 
 const hero = `*[_type == "homepage"]`;
 
 const GetToKnowUsSection = () => {
     const [getToData,setGetToData] = useState<any[] | []>([]);
+    const {handleItemClick} = useContext(MyContext)
   
     useEffect(() => {
         const fetchData = async () => {
@@ -33,7 +36,7 @@ const GetToKnowUsSection = () => {
                     {_ref && <img className={taxiStyles.taxiImg} src={_ref && urlFor(_ref).url()} width="auto" height="auto" alt={String(index)} />}
                     {Heading && <h2>{Heading}</h2>}
                     {Text && <p>{Text}</p>}
-                    {ButtonText && <div><a href={ButtonLink}>{ButtonText}</a></div>}
+                    {ButtonText && <div><NavLink onClick={() => handleItemClick(index + 1)} to={ButtonLink}>{ButtonText}</NavLink></div>}
                 </div>
             } )}
         </div>
