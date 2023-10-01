@@ -35,7 +35,7 @@ const ExcursionOffers = () => {
               {item.text && <p>{item.text}</p>}
             </div>
             <div className={globalStyles.grid3}>
-            {item.images.map((item:any,index:number) => {
+            {item.images && item.images.map((item:any,index:number) => {
               return <div key={index}>
                 <img className={taxiStyles.taxiImg} src={item.asset._ref && urlFor(item.asset._ref).url()} width="auto" height="auto" alt={`image${index}`} />
               </div>
