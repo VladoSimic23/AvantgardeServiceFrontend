@@ -32,13 +32,13 @@ function ContactForm() {
     }
   };
 
-  useEffect(() => {
-    if(messageStatus) {
-      setTimeout(() => {
-        setMessageStatus("")
-      },3000)
-    }
-  },[messageStatus])
+  // useEffect(() => {
+  //   if(messageStatus) {
+  //     setTimeout(() => {
+  //       setMessageStatus("")
+  //     },3000)
+  //   }
+  // },[messageStatus])
 
 
   return (
