@@ -29,7 +29,7 @@ const ExcursionOffers = () => {
       </div>
       <div>
         {excData[0]?.excrusions.addTown && excData[0]?.excrusions.addTown.map((item:any,index: number) => {
-          return <div key={index} className={globalStyles.textCenter} >
+          return <div key={index} className={`${globalStyles.textCenter} ${globalStyles.mt120}`} >
             <div className={globalStyles.container800}>
               {item.heading && <h2 className={globalStyles.borderGreen}>{item.heading}</h2>}
               {item.text && <p>{item.text}</p>}

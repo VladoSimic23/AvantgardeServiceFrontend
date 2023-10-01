@@ -89,6 +89,10 @@ img {
   max-width: 100%;
 }
 
+.mt120 {
+  margin-top: 120px;
+}
+
 .btnGreen {
   color: white;
   background: #11c976;
