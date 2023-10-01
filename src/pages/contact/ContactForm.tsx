@@ -21,7 +21,8 @@ function ContactForm() {
         { from_name: name,from_subject: subject ,from_email: email, message },
         "ZHX9qWZnI66p5L68e"
       );
-
+        console.log(response);
+        
       setMessageStatus('Email sent successfully');
       setName(""),
       setEmail(""),
@@ -32,13 +33,13 @@ function ContactForm() {
     }
   };
 
-  // useEffect(() => {
-  //   if(messageStatus) {
-  //     setTimeout(() => {
-  //       setMessageStatus("")
-  //     },3000)
-  //   }
-  // },[messageStatus])
+  useEffect(() => {
+    if(messageStatus) {
+      setTimeout(() => {
+        setMessageStatus("")
+      },3000)
+    }
+  },[messageStatus])
 
 
   return (
