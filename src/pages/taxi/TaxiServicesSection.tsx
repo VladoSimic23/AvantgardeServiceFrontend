@@ -25,7 +25,7 @@ const TaxiServicesSection = () => {
             <div className={globalStyles.grid3}>
                 {taxiData[0]?.transportServices.services && taxiData[0]?.transportServices.services.map((item:any,index:number) => {
                     return <div key={index}>
-                        <img className={taxiStyles.taxiImg} src={item.image.asset._ref && urlFor(item.image.asset._ref).url()} width="auto" height="auto" alt={`taxiImage${index}`} />
+                        {item.image.asset._ref && <img className={taxiStyles.taxiImg} src={item.image.asset._ref && urlFor(item.image.asset._ref).url()} width="auto" height="auto" alt={`taxiImage${index}`} />}
                         {item.heading && <h2 className={globalStyles.borderGreen}>{item.heading}</h2>}
                         {item.text && <p>{item.text}</p>}
                     </div>

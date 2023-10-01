@@ -23,7 +23,7 @@ const ExperienceSection = () => {
     <div className={globalStyles.grid2}>
       {experienceData[0]?.experience.ImageThenText && experienceData[0]?.experience.ImageThenText?.map((item:any,index:number) => {
           return <div key={index}>
-              <img src={item.Experience_Image.asset._ref && urlFor(item.Experience_Image.asset._ref).url()} width="auto" height="auto" alt={`image${index}`} />
+              {item.Experience_Image.asset._ref && <img src={item.Experience_Image.asset._ref && urlFor(item.Experience_Image.asset._ref).url()} width="auto" height="auto" alt={`image${index}`} />}
               {item.Experience_Heading && <h1 className={globalStyles.borderGreen}>{item.Experience_Heading}</h1>}
               {item.Experience_Text && <p>{item.Experience_Text}</p>}
           </div>
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
           return <div  key={index}>
               {item.Experience_Heading && <h1 className={`${globalStyles.borderGreen} ${globalStyles.headMargin}`} >{item.Experience_Heading}</h1>}
               {item.Experience_Text && <p>{item.Experience_Text}</p>}
-              <img src={item.Experience_Image.asset._ref && urlFor(item.Experience_Image.asset._ref).url()} width="auto" height="auto" alt={`image${index}`} />
+              {item.Experience_Image.asset._ref && <img src={item.Experience_Image.asset._ref && urlFor(item.Experience_Image.asset._ref).url()} width="auto" height="auto" alt={`image${index}`} />}
           </div>
       })}
     </div>
