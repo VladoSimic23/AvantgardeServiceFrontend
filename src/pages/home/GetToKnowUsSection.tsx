@@ -34,7 +34,7 @@ const GetToKnowUsSection = () => {
                 const {Image: {asset: {_ref}},Button_Link: {ButtonLink,ButtonText},Heading,Text} = item;
                 return <div key={index} className={styles.getToFlex}>
                     {_ref && <img className={taxiStyles.taxiImg} src={_ref && urlFor(_ref).url()} width="auto" height="auto" alt={String(index)} />}
-                    {Heading && <h2>{Heading}</h2>}
+                    {Heading && <div><h2 className={globalStyles.borderGreen}>{Heading}</h2></div>}
                     {Text && <p>{Text}</p>}
                     {ButtonText && <div><NavLink onClick={() => handleItemClick(index + 1)} to={ButtonLink}>{ButtonText}</NavLink></div>}
                 </div>
