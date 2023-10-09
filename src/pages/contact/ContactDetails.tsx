@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styles from "../../pages/home/css/home.module.css"
 import globalStyles from "../../globalCss/globalStyle.module.css"
 import contactStyles from "./css/contact.module.css"
 import client from "../../sanity"
@@ -22,10 +21,7 @@ const ContactDetails = () => {
     if(contactData.length < 1) {
         return;
     }
-    
-    console.log(contactData[0].ContactDetails);
-
-       
+      
      return (
         <section className={contactStyles.contactDetails}>
             <div>
