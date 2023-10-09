@@ -180,6 +180,9 @@ img {
   max-width: 800px;
   margin: 60px auto 0 auto;
 }
+.video iframe {
+  max-height: 450px;
+}
 
 @media only screen and (max-width: 992px) {
   h1 {

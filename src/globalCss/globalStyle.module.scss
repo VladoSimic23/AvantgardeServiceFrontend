@@ -116,7 +116,6 @@ img {
   margin-bottom: 20px; /* Add space between items vertically */
   break-inside: avoid-column; /* Prevent items from breaking across columns */
 }
-
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -154,6 +153,9 @@ img {
 .video {
   max-width: 800px;
   margin: 60px auto 0 auto;
+    iframe {
+      max-height: 450px;
+    }
 }
 @media only screen and (max-width: 992px) {
   h1 {
