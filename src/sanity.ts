@@ -1,5 +1,5 @@
 import {createClient} from "@sanity/client";
-const apiUrl = import.meta.env.VITE_APP_API_SANITY;
+// const apiUrl = import.meta.env.VITE_APP_API_SANITY;
 
 
 export default createClient({
